@@ -1,4 +1,4 @@
-FROM jelastic/maven:3.9.5-openjdk-21 AS builder
+FROM maven:3.8.3-openjdk-17 AS builder
 WORKDIR /app
 
 COPY pom.xml .
@@ -6,7 +6,7 @@ COPY src ./src
 
 RUN mvn clean install -DskipTests
 
-FROM openjdk:21-jdk-slim
+FROM openjdk:17-jdk
 
 WORKDIR /app
 
