@@ -20,7 +20,6 @@ public class MongoDbIntegrationTest {
         album.setTitre("Test Album");
         album.setArtiste("Test Artist");
         album.setAnnee(2024);
-        log.info("before saving in db");
         albumRepository.save(album);
         assert albumRepository.findAll().size() > 0;
     }
