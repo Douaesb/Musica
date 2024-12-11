@@ -10,6 +10,6 @@ public class Album {
     @Id
     private String id;
     private String titre;
-    private String artiste;
-    private int annee;
+//    private String artiste;
+//    private int annee;
 }
