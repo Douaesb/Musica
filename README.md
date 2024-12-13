@@ -142,3 +142,5 @@ For any questions or suggestions, please contact:
 - **Email:** [douae.sb411@gmail.com](mailto:douae.sb411@gmail.com)
 - **GitHub:** [Douaesb](https://github.com/Douaesb)
 
+## PLanification JIRA
+https://douaesb411.atlassian.net/jira/software/projects/MUS/boards/14/backlog?epics=visible&atlOrigin=eyJpIjoiNWMzMzU2YzFjYjY5NDUwNGJjOTBhNWVlNDI1ZmVlZjMiLCJwIjoiaiJ9
