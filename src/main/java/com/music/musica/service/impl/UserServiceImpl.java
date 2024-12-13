@@ -31,13 +31,32 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+//    @Override
+//    public UserDTO register(UserDTO userDTO) {
+//        User user = userMapper.toEntity(userDTO);
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
+//        user.setRoles(List.of(roleRepository.findByName("USER")));
+//        return userMapper.toDTO(userRepository.save(user));
+//    }
+
     @Override
     public UserDTO register(UserDTO userDTO) {
         User user = userMapper.toEntity(userDTO);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRoles(List.of(roleRepository.findByName("USER")));
+
+        List<Role> roles = userDTO.getRoles().stream()
+                .map(roleName -> roleRepository.findByName(roleName))
+                .collect(Collectors.toList());
+
+        if (roles.isEmpty()) {
+            roles.add(roleRepository.findByName("USER"));
+        }
+
+        user.setRoles(roles);
+
         return userMapper.toDTO(userRepository.save(user));
     }
+
 
     @Override
     public List<UserDTO> getAllUsers() {
